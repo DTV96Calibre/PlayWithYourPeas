@@ -1,0 +1,254 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://Assets/Background.tex" type="Texture" id=1]
+[ext_resource path="res://Assets/objects/wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/objects/leftRamp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/objects/rightRamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://pea.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Pea-Standard.tex" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 18.0
+
+[node name="root" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+
+transform/pos = Vector2( 511.86, 299.501 )
+transform/scale = Vector2( 1.27965, 0.998336 )
+texture = ExtResource( 1 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="blocks" type="Node2D" parent="."]
+
+[node name="wall" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 522 )
+
+[node name="wall1" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 462 )
+
+[node name="wall2" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 402 )
+
+[node name="wall3" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 342 )
+
+[node name="wall4" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 282 )
+
+[node name="wall5" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 222 )
+
+[node name="wall6" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 162 )
+
+[node name="wall7" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 177, 102 )
+
+[node name="wall8" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 317, 522 )
+
+[node name="wall9" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 387, 522 )
+
+[node name="wall10" parent="blocks" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 317, 462 )
+
+[node name="leftRamp" parent="blocks" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 527, 512 )
+
+[node name="leftRamp1" parent="blocks" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 697, 252 )
+
+[node name="leftRamp2" parent="blocks" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 597, 362 )
+
+[node name="leftRamp3" parent="blocks" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 387, 332 )
+
+[node name="rightRamp" parent="blocks" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 457, 512 )
+
+[node name="rightRamp1" parent="blocks" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 277, 262 )
+
+[node name="rightRamp2" parent="blocks" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 247, 412 )
+
+[node name="rightRamp 2" parent="blocks" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 387, 462 )
+
+[node name="pea" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 217, 32 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="pea"]
+
+texture = ExtResource( 6 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pea"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="pea1" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 677, 82 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="pea1"]
+
+texture = ExtResource( 6 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pea1"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="pea2" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 412, 82 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="pea2"]
+
+texture = ExtResource( 6 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pea2"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="pea3" type="RigidBody2D" parent="."]
+
+transform/pos = Vector2( 592, 282 )
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="pea3"]
+
+texture = ExtResource( 6 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pea3"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+
