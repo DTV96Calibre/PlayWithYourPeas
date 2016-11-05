@@ -16,5 +16,6 @@ func _fixed_process(delta):
 func _input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
 		set_fixed_process(!is_fixed_processing())
+		self.set_sleeping(!self.is_sleeping())
 
 
