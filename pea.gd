@@ -10,12 +10,12 @@ func _ready():
 	# Initialization here
 	set_process_input(false)
 
-func _fixed_process(delta):
+func _process(delta):
 	self.set_pos(get_global_mouse_pos())
 
 func _input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
-		set_fixed_process(!is_fixed_processing())
+		set_process(!is_fixed_processing())
 		self.set_sleeping(!self.is_sleeping())
 
 
