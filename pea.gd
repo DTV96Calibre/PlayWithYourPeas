@@ -15,7 +15,8 @@ func _process(delta):
 
 func _input_event(viewport, event, shape_idx):
 	if (event.is_pressed()):
-		set_process(!is_fixed_processing())
-		self.set_sleeping(!self.is_sleeping())
+		set_process(!is_processing())
+		set_linear_velocity(Vector2(0,0))
+		set_angular_velocity(0)
 
 
