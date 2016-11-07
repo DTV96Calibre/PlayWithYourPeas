@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://Assets/Background.tex" type="Texture" id=1]
-[ext_resource path="res://Assets/objects/wall.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/objects/leftRamp.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/objects/rightRamp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://pea.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Pea-Standard.tex" type="Texture" id=6]
+[ext_resource path="res://camera.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Background.tex" type="Texture" id=2]
+[ext_resource path="res://Assets/objects/wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/objects/leftRamp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/objects/rightRamp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://pea.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Pea-Standard.tex" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -14,93 +15,119 @@ radius = 18.0
 
 [node name="root" type="Node2D"]
 
-[node name="background" type="Sprite" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
 
-transform/pos = Vector2( 511.86, 299.501 )
-transform/scale = Vector2( 1.27965, 0.998336 )
-texture = ExtResource( 1 )
+editor/display_folded = true
+transform/pos = Vector2( 512, 302 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = false
+drag_margin/v_enabled = false
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+script/script = ExtResource( 1 )
+CAMERA_SPEED = 100
+
+[node name="background" type="Sprite" parent="Camera2D"]
+
+transform/pos = Vector2( -0.195992, -6.20144 )
+transform/scale = Vector2( 1.39201, 1.086 )
+texture = ExtResource( 2 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="blocks" type="Node2D" parent="."]
 
-[node name="wall" parent="blocks" instance=ExtResource( 2 )]
+editor/display_folded = true
+
+[node name="wall" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 522 )
 
-[node name="wall1" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall1" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 462 )
 
-[node name="wall2" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall2" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 402 )
 
-[node name="wall3" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall3" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 342 )
 
-[node name="wall4" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall4" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 282 )
 
-[node name="wall5" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall5" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 222 )
 
-[node name="wall6" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall6" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 162 )
 
-[node name="wall7" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall7" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 177, 102 )
 
-[node name="wall8" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall8" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 317, 522 )
 
-[node name="wall9" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall9" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 387, 522 )
 
-[node name="wall10" parent="blocks" instance=ExtResource( 2 )]
+[node name="wall10" parent="blocks" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 317, 462 )
 
-[node name="leftRamp" parent="blocks" instance=ExtResource( 3 )]
+[node name="leftRamp" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 527, 512 )
 
-[node name="leftRamp1" parent="blocks" instance=ExtResource( 3 )]
+[node name="leftRamp1" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 697, 252 )
 
-[node name="leftRamp2" parent="blocks" instance=ExtResource( 3 )]
+[node name="leftRamp2" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 597, 362 )
 
-[node name="leftRamp3" parent="blocks" instance=ExtResource( 3 )]
+[node name="leftRamp3" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 387, 332 )
 
-[node name="rightRamp" parent="blocks" instance=ExtResource( 4 )]
+[node name="rightRamp" parent="blocks" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 457, 512 )
 
-[node name="rightRamp1" parent="blocks" instance=ExtResource( 4 )]
+[node name="rightRamp1" parent="blocks" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 277, 262 )
 
-[node name="rightRamp2" parent="blocks" instance=ExtResource( 4 )]
+[node name="rightRamp2" parent="blocks" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 247, 412 )
 
-[node name="rightRamp 2" parent="blocks" instance=ExtResource( 4 )]
+[node name="rightRamp 2" parent="blocks" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 387, 462 )
 
 [node name="pea" type="RigidBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 217, 32 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -123,11 +150,11 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="pea"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea"]
@@ -139,6 +166,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="pea1" type="RigidBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 677, 82 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -161,11 +189,11 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="pea1"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea1"]
@@ -177,6 +205,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="pea2" type="RigidBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 412, 82 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -199,11 +228,11 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="pea2"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea2"]
@@ -215,6 +244,7 @@ __meta__ = { "_edit_lock_":true }
 
 [node name="pea3" type="RigidBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 592, 282 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
@@ -237,11 +267,11 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="pea3"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea3"]
