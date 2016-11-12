@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/objects/wall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/objects/leftRamp.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/objects/rightRamp.tscn" type="PackedScene" id=5]
-[ext_resource path="res://pea.gd" type="Script" id=6]
+[ext_resource path="res://bad_pea.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Pea-Standard.tex" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -151,6 +151,7 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 6 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea"]
 
@@ -190,6 +191,7 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 6 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea1"]
 
@@ -229,6 +231,7 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 6 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea2"]
 
@@ -268,6 +271,7 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 6 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea3"]
 

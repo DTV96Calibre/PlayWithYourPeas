@@ -1,0 +1,18 @@
+[gd_scene format=1]
+
+[node name="level_complete" type="ConfirmationDialog"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 432.0
+margin/top = 252.0
+margin/right = 583.0
+margin/bottom = 336.0
+popup/exclusive = false
+window/title = "Level Complete"
+dialog/text = "Nice, Peepo\nContinue\?"
+dialog/hide_on_ok = true
+
+

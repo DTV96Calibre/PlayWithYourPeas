@@ -1,13 +1,15 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=12 format=1]
 
-[ext_resource path="res://camera.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Background.tex" type="Texture" id=2]
-[ext_resource path="res://Assets/objects/wall.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/objects/leftRamp.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/objects/rightRamp.tscn" type="PackedScene" id=5]
-[ext_resource path="res://pea.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Pea-Standard.tex" type="Texture" id=7]
-[ext_resource path="res://Assets/Pea-Red-Standard.tex" type="Texture" id=8]
+[ext_resource path="res://level_1.gd" type="Script" id=1]
+[ext_resource path="res://camera.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Background.tex" type="Texture" id=3]
+[ext_resource path="res://Assets/objects/wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/objects/leftRamp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/objects/rightRamp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://pea.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Pea-Standard.tex" type="Texture" id=8]
+[ext_resource path="res://Assets/Pea-Red-Standard.tex" type="Texture" id=9]
+[ext_resource path="res://bad_pea.gd" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -15,6 +17,10 @@ custom_solver_bias = 0.0
 radius = 18.0
 
 [node name="root" type="Node2D"]
+
+script/script = ExtResource( 1 )
+DEATHS_TIL_LOSS = 4
+BAD_PEA_DEATHS_TIL_WIN = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -36,97 +42,98 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
-script/script = ExtResource( 1 )
+script/script = ExtResource( 2 )
 CAMERA_SPEED = 100
 
 [node name="background" type="Sprite" parent="Camera2D"]
 
 transform/pos = Vector2( -0.195992, -6.20144 )
 transform/scale = Vector2( 1.39201, 1.086 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="blocks" type="Node2D" parent="."]
 
 editor/display_folded = true
 
-[node name="wall" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 247, 462 )
 
-[node name="wall1" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall1" parent="blocks" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1202, 512 )
+transform/pos = Vector2( 1323.36, 572.274 )
 
-[node name="wall2" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall2" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1307, 382 )
 
-[node name="wall3" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall3" parent="blocks" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1222, 242 )
+transform/pos = Vector2( 1356.39, 63.6232 )
 
-[node name="wall4" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall4" parent="blocks" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1092, 232 )
+transform/pos = Vector2( 1337.17, 221.411 )
 
-[node name="wall5" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall5" parent="blocks" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 842, 332 )
+transform/pos = Vector2( 507, 462 )
 
-[node name="wall6" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall6" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 317, 292 )
 
-[node name="wall7" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall7" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 387, 292 )
 
-[node name="wall8" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall8" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 247, 292 )
 
-[node name="wall9" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall9" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 387, 462 )
 
-[node name="wall10" parent="blocks" instance=ExtResource( 3 )]
+[node name="wall10" parent="blocks" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 317, 462 )
 
-[node name="leftRamp" parent="blocks" instance=ExtResource( 4 )]
+[node name="leftRamp" parent="blocks" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 387, 402 )
 
-[node name="leftRamp1" parent="blocks" instance=ExtResource( 4 )]
+[node name="leftRamp1" parent="blocks" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1077, 382 )
+transform/pos = Vector2( 1318.09, 452.048 )
 
-[node name="leftRamp2" parent="blocks" instance=ExtResource( 4 )]
+[node name="leftRamp2" parent="blocks" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 887, 522 )
+transform/pos = Vector2( 1343.12, 765.537 )
 
-[node name="leftRamp3" parent="blocks" instance=ExtResource( 4 )]
+[node name="leftRamp3" parent="blocks" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 392, 352 )
 transform/rot = 89.9999
 
-[node name="rightRamp" parent="blocks" instance=ExtResource( 5 )]
+[node name="rightRamp" parent="blocks" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 582, 462 )
+transform/pos = Vector2( 647.755, 462 )
+transform/scale = Vector2( -3.05486, 1 )
 
-[node name="rightRamp1" parent="blocks" instance=ExtResource( 5 )]
+[node name="rightRamp1" parent="blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 242, 352 )
 transform/rot = -89.9999
 
-[node name="rightRamp2" parent="blocks" instance=ExtResource( 5 )]
+[node name="rightRamp2" parent="blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 247, 402 )
 
-[node name="rightRamp 2" parent="blocks" instance=ExtResource( 5 )]
+[node name="rightRamp 2" parent="blocks" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 657, 532 )
+transform/pos = Vector2( 1328.15, 688.385 )
 
 [node name="pea" type="RigidBody2D" parent="."]
 
@@ -141,10 +148,10 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 1
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
@@ -153,11 +160,12 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea"]
@@ -170,7 +178,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="pea1" type="RigidBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 337, 392 )
+transform/pos = Vector2( 307, 362 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -180,10 +188,10 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 1
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
@@ -192,11 +200,12 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea1"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea1"]
@@ -209,7 +218,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="pea2" type="RigidBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 267, 382 )
+transform/pos = Vector2( 307, 362 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -219,10 +228,10 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 1
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
@@ -231,11 +240,12 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea2"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea2"]
@@ -248,7 +258,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="pea3" type="RigidBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 302, 412 )
+transform/pos = Vector2( 307, 362 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -258,10 +268,10 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 1
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
@@ -270,11 +280,12 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="pea3"]
 
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pea3"]
@@ -287,7 +298,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="red_pea" type="RigidBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 1087, 172 )
+transform/pos = Vector2( 1135.06, 178.516 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -312,7 +323,7 @@ damp_override/angular = -1.0
 
 [node name="Sprite" type="Sprite" parent="red_pea"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="red_pea"]
@@ -325,7 +336,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="red_pea1" type="RigidBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 1087, 172 )
+transform/pos = Vector2( 1162.75, 87.2343 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -350,7 +361,7 @@ damp_override/angular = -1.0
 
 [node name="Sprite" type="Sprite" parent="red_pea1"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="red_pea1"]
@@ -363,7 +374,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="red_pea2" type="RigidBody2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 837, 272 )
+transform/pos = Vector2( 539, 405 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -373,10 +384,10 @@ collision/mask = 1
 mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.0
+bounce = 0.25
 gravity_scale = 1.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 1
 contacts_reported = 0
 contact_monitor = false
 sleeping = false
@@ -385,10 +396,12 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
+script/script = ExtResource( 10 )
+DEATH_HEIGHT = 1000
 
 [node name="Sprite" type="Sprite" parent="red_pea2"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="red_pea2"]
@@ -426,7 +439,7 @@ damp_override/angular = -1.0
 
 [node name="Sprite" type="Sprite" parent="red_pea3"]
 
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="red_pea3"]
